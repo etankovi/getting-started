@@ -7,7 +7,8 @@ cd getting-started
 ./mvnw install
 ./mvnw package
 java -jar target/quarkus-app/quarkus-run.jar
-curl -w "\n" http://localhost:8080/hello
+curl -w "\n" http://localhost:9090/hello
+curl -X POST http://localhodt:9090/hello -H 'Content-Type: application/json' -d '{"message":"Hello World"}'
 
 ./mvnw package -Dnative -Dquarkus.native.container-build=true
 
